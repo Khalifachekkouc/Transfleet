@@ -2,31 +2,30 @@
 
 Premium fleet management system for the Moroccan logistics market.
 
-## 🔐 Authentication & Access Control Guide
+1. PREREQUISITES
+- Python 3.10+
+- Node.js 18+
 
-Use the following simulated accounts to explore the different workspace portals. Each role is strictly isolated via the system's route protection middleware.
+2. BACKEND SETUP (Django)
 
-| Username | Password | Assigned Role | Redirect Path | Access Level |
-| :--- | :--- | :--- | :--- | :--- |
-| `admin` | `admin123` | **Administrator** | `/dashboard` | Full control (Stats, Flotte, Staff, Ops) |
-| `gestionnaire` | `gestion123` | **Gestionnaire** | `/portal-gestionnaire` | Operational (Vehicles, Drivers, Missions) |
-| `technicien` | `techn123` | **Technicien** | `/portal-technicien` | Technical (Maintenance, Logs, Status) |
+cd backend
 
----
+python -m venv venv
 
-## 🚀 Key Workspaces
+venv\Scripts\activate   # Or source venv/bin/activate on Mac/Linux
 
-### 1. Client Landing Page (`/`)
-Public-facing portal featuring real-time tracking, fleet inventory visibility, and high-end interactive animations.
+pip install -r requirements.txt
 
-### 2. Admin Dashboard (`/dashboard`)
-The command center for administrators. High-level telemetry, financial overviews (Fuel/Maintenance), and critical alerts for expiring documents.
+python manage.py runserver
 
-### 3. Gestionnaire Portal (`/portal-gestionnaire`)
-Focused operational environment. No financial stats; only fleet, personnel, and mission execution tools.
 
-### 4. Technician Terminal (`/portal-technicien`)
-Minimalist technical workspace. Quick intervention logging, status switching, and chronological maintenance history.
+4. FRONTEND SETUP (Next.js)
+
+cd frontend
+
+npm install
+
+npm run dev
 
 ---
 
