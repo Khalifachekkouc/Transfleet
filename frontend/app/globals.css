@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-heading: 'Playfair Display', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --bg-deep: #0f1a14;
+  --bg-card: #1a2e22;
+  --accent: #d97706;
+  --accent-hover: #f59e0b;
+  --teal: #10b981;
+  --border: #064e3b;
+  --text: #fefdf8;
+  --text-muted: #a7f3d0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+* {
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Form inputs dark style */
+.input-dark {
+  @apply w-full bg-[var(--bg-card)] border border-[var(--border)] rounded-sm px-4 py-2.5 text-[var(--text)] text-sm focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-all duration-200 placeholder:text-[var(--text-muted)];
+}
+
+.select-dark {
+  @apply input-dark appearance-none cursor-pointer;
+}
+
+option {
+  @apply bg-[#111] text-white;
+}
+
+/* Button primary */
+.btn-primary {
+  @apply bg-[var(--teal)] hover:bg-[var(--accent)] text-[var(--bg-deep)] text-sm font-semibold px-4 py-2 rounded-sm transition-all duration-200 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Button ghost */
+.btn-ghost {
+  @apply border border-[var(--border)] hover:border-[var(--accent)] text-[var(--text-muted)] hover:text-[var(--text)] text-sm font-semibold px-4 py-2 rounded-sm transition-all duration-200 flex items-center gap-2;
+}
+
+/* Button danger */
+.btn-danger {
+  @apply bg-red-500/10 hover:bg-red-500/20 text-red-400 text-sm font-semibold px-3 py-1.5 rounded-sm transition-all duration-200 flex items-center gap-1.5;
+}
+
+/* Page header */
+.page-header {
+  @apply mb-8;
+}
+
+.page-title {
+  @apply text-2xl font-black tracking-wide text-[var(--text)];
+}
+
+.page-subtitle {
+  @apply text-sm text-[var(--text-muted)] mt-1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.page-title,
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.4s ease-out both;
+}
